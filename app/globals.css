@@ -3,13 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: linear-gradient(135deg, #ff6b6b10, #4ecdc410, #45b7d110);
   --foreground: #171717;
+  --anime-primary: #ff6b6b;
+  --anime-secondary: #4ecdc4;
+  --anime-accent: #45b7d1;
+  --anime-highlight: #8a2be2;
+  --anime-purple: #dda0dd;
+  --anime-pink: #ffb3d9;
+  --anime-mint: #98d8c8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(135deg, #0a0a0a, #1a1a2e, #16213e);
     --foreground: #ededed;
   }
 }
@@ -31,6 +38,277 @@ body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+/* Anime theme styles */
+.anime-gradient-text {
+  background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #8a2be2);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 3s ease infinite;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Fallback for browsers that don't support background-clip */
+@supports not (background-clip: text) {
+  .anime-gradient-text {
+    color: #ff6b6b;
+    -webkit-text-fill-color: unset;
+  }
+}
+
+.anime-glow {
+  box-shadow: 
+    0 0 5px rgba(255, 105, 180, 0.3),
+    0 0 10px rgba(138, 43, 226, 0.2),
+    0 0 15px rgba(30, 144, 255, 0.1);
+}
+
+.anime-glow-bg {
+  background: linear-gradient(-45deg, var(--anime-primary), var(--anime-secondary), var(--anime-accent), var(--anime-highlight));
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.anime-glow-bar {
+  background: linear-gradient(-45deg, var(--anime-primary), var(--anime-secondary), var(--anime-accent));
+  background-size: 200% 200%;
+  animation: gradient-shift 2s ease infinite;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+.anime-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.anime-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 15px rgba(255, 105, 180, 0.2),
+    0 0 20px rgba(138, 43, 226, 0.1);
+}
+
+.anime-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.anime-button:hover::before {
+  left: 100%;
+}
+
+.anime-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.anime-card:hover {
+  border-color: rgba(255, 105, 180, 0.3);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(255, 105, 180, 0.1);
+  transform: translateY(-3px);
+}
+
+.anime-icon {
+  transition: all 0.3s ease;
+}
+
+.anime-icon:hover {
+  color: var(--anime-primary) !important;
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.6));
+}
+
+.anime-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4), 0 0 30px rgba(138, 43, 226, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.2);
+  }
+}
+
+/* Additional anime-inspired effects */
+.anime-sparkle {
+  position: relative;
+}
+
+.anime-sparkle::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 12px;
+  animation: sparkle 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.anime-sparkle:hover::after {
+  opacity: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Custom cursor styles for enhanced interaction */
+body {
+  cursor: auto; /* Keep default cursor for better performance */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced glow effects for interactive elements */
+.interactive-glow {
+  transition: transform 0.2s ease;
+}
+
+.interactive-glow:hover {
+  transform: scale(1.02);
+}
+
+/* Particle trail optimization */
+.particle-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Mouse ripple effect */
+@keyframes mouse-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.mouse-ripple {
+  animation: mouse-ripple 0.4s ease-out;
+}
+
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Anime-style buttons */
+.anime-button {
+  background: linear-gradient(45deg, var(--anime-primary), var(--anime-secondary));
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.anime-button:hover::before {
+  left: 100%;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.anime-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glowing effects */
+.anime-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 107, 107, 0.3),
+    0 0 40px rgba(78, 205, 196, 0.2);
+  animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  from {
+    box-shadow: 
+      0 0 20px rgba(255, 107, 107, 0.3),
+      0 0 40px rgba(78, 205, 196, 0.2);
+  }
+  to {
+    box-shadow: 
+      0 0 30px rgba(255, 107, 107, 0.5),
+      0 0 50px rgba(78, 205, 196, 0.3);
+  }
 }
 
 /* Custom scrollbar */

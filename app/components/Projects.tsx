@@ -1,82 +1,60 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Web App', 'Mobile App', 'UI/UX Design'];
+  const categories = [t('projects.all'), t('projects.web'), t('projects.ml'), t('projects.crypto'), t('projects.mobile')];
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Website PPDB TK Aba Mertosanan',
       category: 'Web App',
-      description: 'Full-stack e-commerce platform with payment integration, inventory management, and admin dashboard.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Stripe'],
-      liveDemo: '#',
-      sourceCode: '#',
+      description: 'Website lengkap untuk TK Aba Mertosanan dengan fitur pendaftaran online siswa, galeri kegiatan, program kurikulum, dan portal admin. Menggunakan design yang child-friendly dengan navigasi yang intuitif.',
+      image: '/projects/tk-aba-mertosanan.png',
+      technologies: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind CSS'],
+      liveDemo: 'https://tk-aba-mertosanan.vercel.app',
+      sourceCode: 'https://github.com/kyASse/tk-aba-mertosanan',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      category: 'Mobile App',
-      description: 'Cross-platform mobile app for task management with real-time synchronization and team collaboration.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React Native', 'Firebase', 'TypeScript', 'Expo'],
-      liveDemo: '#',
-      sourceCode: '#',
+      title: 'AES-128 Visualizer Cipher',
+      category: 'Cryptography',
+      description: 'Aplikasi web interaktif untuk visualisasi proses enkripsi dan dekripsi AES-128. Menampilkan step-by-step proses kriptografi dengan interface yang clean dan dark theme untuk pengalaman pengguna yang optimal.',
+      image: '/projects/aes-128-visualizer.png',
+      technologies: ['Python', 'Streamlit', 'Cryptography', 'AES-128'],
+      liveDemo: 'https://aes-128-encrypt-decrypt.streamlit.app/',
+      sourceCode: 'https://github.com/RendieRYU/Final-Project-Cryptography-Aes-Encryption-Decryption',
       featured: true
     },
     {
       id: 3,
-      title: 'Banking Dashboard',
-      category: 'UI/UX Design',
-      description: 'Modern banking dashboard design with intuitive user interface and comprehensive data visualization.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Figma', 'Adobe XD', 'Principle', 'InVision'],
+      title: 'Analisis Data Bike Sharing Dataset',
+      category: 'Machine Learning',
+      description: 'Proyek analisis data komprehensif menggunakan Bike Sharing Dataset. Menghasilkan insights mendalam tentang pola penggunaan sepeda dengan visualisasi data yang menarik menggunakan Python dan Streamlit dashboard.',
+      technologies: ['Python', 'Pandas', 'Matplotlib', 'Streamlit'],
       liveDemo: '#',
-      sourceCode: '#',
-      featured: false
+      sourceCode: 'https://github.com/RendieRYU/Proyek-Analisis-Data-Bike-Sharing-Dataset',
+      featured: true
     },
     {
       id: 4,
-      title: 'Real Estate Website',
-      category: 'Web App',
-      description: 'Responsive real estate website with property search, virtual tours, and agent management system.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express.js'],
+      title: 'Klasifikasi Tingkat Kematangan Tomat',
+      category: 'Machine Learning',
+      description: 'Sistem klasifikasi otomatis menggunakan Convolutional Neural Network (CNN) untuk mendeteksi tingkat kematangan tomat. Model dapat mengklasifikasi tomat menjadi 4 kategori: mentah, setengah matang, matang, dan busuk.',
+      technologies: ['Python', 'TensorFlow', 'CNN', 'Google Colab'],
       liveDemo: '#',
-      sourceCode: '#',
+      sourceCode: 'https://github.com/RendieRYU/Klasifikasi-Kematangan-Tomat',
       featured: false
-    },
-    {
-      id: 5,
-      title: 'Fitness Tracker',
-      category: 'Mobile App',
-      description: 'iOS and Android fitness tracking app with workout plans, progress tracking, and social features.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'Google Fit API'],
-      liveDemo: '#',
-      sourceCode: '#',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Learning Management System',
-      category: 'Web App',
-      description: 'Comprehensive LMS with course management, video streaming, quizzes, and progress tracking.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Vue.js', 'Laravel', 'MySQL', 'AWS S3'],
-      liveDemo: '#',
-      sourceCode: '#',
-      featured: true
     }
   ];
 
-  const filteredProjects = selectedCategory === 'All' 
+  const filteredProjects = selectedCategory === t('projects.all') 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
 
@@ -85,10 +63,10 @@ const Projects = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20 lg:mb-24">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-6 lg:mb-8">
-            My <span className="text-blue-600">Projects</span>
+            {t('projects.title')}
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A showcase of my work, featuring web applications, mobile apps, and design projects
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -98,9 +76,9 @@ const Projects = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
+              className={`anime-button px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
+                  ? 'anime-glow-bg text-white shadow-lg'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >
@@ -114,18 +92,26 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 group"
+              className="anime-card bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 group"
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden h-56 lg:h-64 bg-gradient-to-br from-blue-400 to-purple-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-6xl lg:text-7xl font-bold opacity-50">
-                    {project.title.charAt(0)}
+              <div className="relative overflow-hidden h-56 lg:h-64 group">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                    <div className="text-white text-6xl lg:text-7xl font-bold opacity-50">
+                      {project.title.charAt(0)}
+                    </div>
                   </div>
-                </div>
+                )}
                 {project.featured && (
-                  <div className="absolute top-4 left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 left-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-semibold z-10">
                     Featured
                   </div>
                 )}
@@ -152,7 +138,7 @@ const Projects = () => {
                   <h3 className="text-xl lg:text-2xl font-bold text-gray-800 dark:text-white">
                     {project.title}
                   </h3>
-                  <span className="text-blue-600 dark:text-blue-400 text-sm font-medium bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
+                  <span className="anime-gradient-text text-sm font-medium bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
                 </div>
@@ -179,7 +165,7 @@ const Projects = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16 sm:mt-20 lg:mt-24">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-10 lg:p-16 text-white max-w-4xl mx-auto">
+          <div className="anime-glow-bg rounded-xl p-10 lg:p-16 text-white max-w-4xl mx-auto">
             <h3 className="text-2xl lg:text-3xl font-bold mb-6 lg:mb-8">
               Interested in working together?
             </h3>
@@ -189,7 +175,7 @@ const Projects = () => {
             </p>
             <a
               href="#contact"
-              className="inline-block bg-white text-blue-600 px-10 lg:px-12 py-4 lg:py-5 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
+              className="anime-button inline-block bg-white text-blue-600 px-10 lg:px-12 py-4 lg:py-5 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
               Get In Touch
             </a>

@@ -2,14 +2,19 @@
 
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import AnimeParticles from './AnimeParticles';
+import MagicButton from './MagicButton';
 
 const Hero = () => {
   const [text, setText] = useState('');
   const { t, language } = useLanguage();
   
+  // Debug log
+  console.log('Hero render - name:', t('hero.name'), 'greeting:', t('hero.greeting'));
+  
   const roles = {
-    en: ['Machine Learning Engineer', 'Cryptographer', 'Mobile Developer', 'Web Developer'],
-    id: ['Machine Learning Engineer', 'Kriptografer', 'Mobile Developer', 'Web Developer']
+    en: ['Computer Science Student', 'Teaching Assistant', 'Web Developer', 'AI Enthusiast'],
+    id: ['Mahasiswa Informatika', 'Asisten Praktikum', 'Web Developer', 'AI Enthusiast']
   };
   
   const [currentRole, setCurrentRole] = useState(0);
@@ -38,15 +43,16 @@ const Hero = () => {
   }, [currentRole, language]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 pt-24 pb-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900 pt-24 pb-12">
+      <AnimeParticles />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Text Content */}
           <div className="text-center lg:text-left space-y-6 lg:space-y-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-800 dark:text-white leading-tight">
-              {t('hero.greeting')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                {t('hero.name')}
+              {t('hero.greeting') || 'Hi, I\'m'}{' '}
+              <span className="anime-gradient-text">
+                {t('hero.name') || 'Rendie Abdi Saputra'}
               </span>
             </h1>
             
@@ -63,18 +69,18 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start pt-4 lg:pt-6">
-              <a
+              <MagicButton
                 href="#contact"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-full font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-center"
+                className="anime-glow bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 lg:px-10 py-4 lg:py-5 rounded-full font-semibold text-lg text-center"
               >
                 {t('hero.cta')}
-              </a>
-              <a
+              </MagicButton>
+              <MagicButton
                 href="#projects"
-                className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 lg:px-10 py-4 lg:py-5 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 text-center"
+                className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 lg:px-10 py-4 lg:py-5 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 text-center"
               >
                 {t('hero.viewWork')}
-              </a>
+              </MagicButton>
             </div>
 
             {/* Social Links */}

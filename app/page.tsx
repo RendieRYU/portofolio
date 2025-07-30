@@ -1,3 +1,5 @@
+import { LanguageProvider } from './contexts/LanguageContext';
+import LanguageSwitcher from './components/LanguageSwitcher';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,16 +10,19 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
-      <main className="relative">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <LanguageSwitcher />
+        <Header />
+        <main className="relative">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

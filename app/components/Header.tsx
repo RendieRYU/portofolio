@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold text-gray-800 dark:text-white">
+          <div className="anime-gradient-text text-2xl font-bold">
             Portfolio
           </div>
 
@@ -30,7 +30,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
+                className="anime-icon text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>

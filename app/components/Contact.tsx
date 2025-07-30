@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -35,27 +37,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: '📧',
-      title: 'Email',
-      content: 'hello@johndoe.dev',
-      link: 'mailto:hello@johndoe.dev'
+      title: t('contact.info.email'),
+      content: 'rendiabdi1217@gmail.com',
+      link: 'mailto:rendiabdi1217@gmail.com'
     },
     {
       icon: '📱',
-      title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      title: t('contact.info.phone'),
+      content: '+62 822-2702-7379',
+      link: 'tel:+6282227027379'
     },
     {
       icon: '📍',
-      title: 'Location',
-      content: 'San Francisco, CA',
+      title: t('contact.info.location'),
+      content: 'Maguwoharjo, Depok, Sleman, DI Yogyakarta',
       link: '#'
     },
     {
       icon: '💼',
       title: 'LinkedIn',
-      content: '/in/johndoe',
-      link: 'https://linkedin.com/in/johndoe'
+      content: 'rendie-abdi-saputra',
+      link: 'http://linkedin.com/in/rendie-abdi-saputra-32b629258/'
     }
   ];
 
@@ -64,18 +66,18 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 sm:mb-20 lg:mb-24">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-6 lg:mb-8">
-            Get In <span className="text-blue-600">Touch</span>
+            {t('contact.title')}
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
+            {t('contact.description')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 max-w-7xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-900 rounded-xl p-8 lg:p-10 shadow-lg">
+          <div className="anime-card bg-white dark:bg-gray-900 rounded-xl p-8 lg:p-10 shadow-lg">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-6 lg:mb-8">
-              Send me a message
+              {t('contact.subtitle')}
             </h3>
             
             {submitMessage && (
@@ -153,7 +155,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 lg:py-5 px-8 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="anime-button anime-glow w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 lg:py-5 px-8 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
@@ -178,9 +180,9 @@ const Contact = () => {
                 <a
                   key={index}
                   href={info.link}
-                  className="flex items-center p-6 lg:p-8 bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow group"
+                  className="anime-card flex items-center p-6 lg:p-8 bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow group"
                 >
-                  <div className="text-4xl lg:text-5xl mr-6 lg:mr-8 group-hover:scale-110 transition-transform">
+                  <div className="text-4xl lg:text-5xl mr-6 lg:mr-8 group-hover:scale-110 transition-transform anime-float">
                     {info.icon}
                   </div>
                   <div>
@@ -196,25 +198,25 @@ const Contact = () => {
             </div>
 
             {/* Availability Status */}
-            <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-xl p-8 lg:p-10 text-white">
+            <div className="anime-glow-bg rounded-xl p-8 lg:p-10 text-white">
               <div className="flex items-center mb-4 lg:mb-6">
                 <div className="w-4 h-4 bg-green-300 rounded-full mr-4 animate-pulse"></div>
-                <span className="font-semibold text-lg lg:text-xl">Available for new projects</span>
+                <span className="font-semibold text-lg lg:text-xl">Available for new opportunities</span>
               </div>
               <p className="text-green-100 text-base lg:text-lg leading-relaxed">
-                I'm currently accepting new freelance projects and full-time opportunities. 
-                Let's discuss how I can help bring your vision to life!
+                I'm currently open to internship opportunities, freelance projects, and collaboration. 
+                Let's discuss how we can work together!
               </p>
             </div>
 
             {/* Response Time */}
             <div className="bg-white dark:bg-gray-900 rounded-xl p-8 lg:p-10 shadow-md">
               <h4 className="font-semibold text-gray-800 dark:text-white mb-4 lg:mb-6 text-lg lg:text-xl">
-                📞 Response Time
+                📞 {t('contact.info.response')}
               </h4>
               <p className="text-gray-600 dark:text-gray-300 text-base lg:text-lg leading-relaxed">
-                I typically respond to messages within 24 hours. For urgent matters, 
-                feel free to reach out via phone or LinkedIn for a faster response.
+                Saya biasanya merespons pesan dalam 24 jam. Untuk hal yang mendesak, 
+                silakan hubungi melalui WhatsApp atau LinkedIn untuk respons yang lebih cepat.
               </p>
             </div>
           </div>
