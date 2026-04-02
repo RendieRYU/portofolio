@@ -23,14 +23,14 @@ const translations = {
     // Hero Section
     'hero.greeting': 'Hi, I\'m',
     'hero.name': 'Rendie Abdi Saputra',
-    'hero.description': 'I\'m a passionate Computer Science student and Teaching Assistant with 2 years of experience in programming and web development. I love creating innovative solutions using modern technologies and AI.',
+    'hero.description': 'I\'m a passionate Computer Science graduate and Teaching Assistant with 2 years of experience in programming and web development. I love creating innovative solutions using modern technologies and AI.',
     'hero.cta': 'Get In Touch',
     'hero.viewWork': 'View My Work',
     
     // About Section
     'about.title': 'About Me',
     'about.subtitle': 'Get to know me better',
-    'about.description': 'I am a Computer Science student at Universitas Ahmad Dahlan with a GPA of 3.90. As a Teaching Assistant with 2 years of experience, I\'m passionate about programming, web development, and AI. I enjoy creating innovative solutions that solve real-world problems.',
+    'about.description': 'I am a Computer Science graduate from Universitas Ahmad Dahlan with a GPA of 3.92. As a Teaching Assistant with 2 years of experience, I\'m passionate about programming, web development, and AI. I enjoy creating innovative solutions that solve real-world problems.',
     'about.experience': 'Years Experience',
     'about.projects': 'Projects Completed',
     'about.clients': 'Academic Projects',
@@ -38,12 +38,14 @@ const translations = {
     
     // Experience Timeline
     'about.timeline.title': 'My Journey',
-    'about.timeline.student': 'Computer Science Student',
-    'about.timeline.student.desc': 'Studying at Universitas Ahmad Dahlan (GPA: 3.90)',
+    'about.timeline.student': 'Bachelor of Computer Science',
+    'about.timeline.student.desc': 'Graduated from Universitas Ahmad Dahlan (GPA: 3.92)',
     'about.timeline.assistant': 'Teaching Assistant',
     'about.timeline.assistant.desc': 'Helping students with programming and algorithms',
     'about.timeline.developer': 'Web Developer',
     'about.timeline.developer.desc': 'Building web applications with modern technologies',
+    'about.timeline.pmb': 'Student Employee',
+    'about.timeline.pmb.desc': 'Verified and registered new students while promoting the university',
     'about.timeline.mobile.desc': 'Built cross-platform mobile applications',
     'about.timeline.web': 'Web Developer',
     'about.timeline.web.desc': 'Created responsive web applications',
@@ -105,14 +107,14 @@ const translations = {
     // Hero Section
     'hero.greeting': 'Hai, Saya',
     'hero.name': 'Rendie Abdi Saputra',
-    'hero.description': 'Saya adalah mahasiswa Informatika dan Asisten Praktikum dengan pengalaman 2 tahun di bidang pemrograman dan pengembangan web. Saya senang menciptakan solusi inovatif menggunakan teknologi modern dan AI.',
+    'hero.description': 'Saya adalah lulusan Informatika dan Asisten Praktikum dengan pengalaman 2 tahun di bidang pemrograman dan pengembangan web. Saya senang menciptakan solusi inovatif menggunakan teknologi modern dan AI.',
     'hero.cta': 'Hubungi Saya',
     'hero.viewWork': 'Lihat Karya Saya',
     
     // About Section
     'about.title': 'Tentang Saya',
     'about.subtitle': 'Mari mengenal saya lebih dekat',
-    'about.description': 'Saya adalah mahasiswa Informatika di Universitas Ahmad Dahlan dengan IPK 3.90. Sebagai Asisten Praktikum dengan pengalaman 2 tahun, saya bersemangat tentang pemrograman, pengembangan web, dan AI. Saya senang menciptakan solusi inovatif yang memecahkan masalah dunia nyata.',
+    'about.description': 'Saya adalah lulusan Informatika dari Universitas Ahmad Dahlan dengan IPK 3.92. Sebagai Asisten Praktikum dengan pengalaman 2 tahun, saya bersemangat tentang pemrograman, pengembangan web, dan AI. Saya senang menciptakan solusi inovatif yang memecahkan masalah dunia nyata.',
     'about.experience': 'Tahun Pengalaman',
     'about.projects': 'Proyek Selesai',
     'about.clients': 'Klien Puas',
@@ -120,6 +122,8 @@ const translations = {
     
     // Experience Timeline
     'about.timeline.title': 'Perjalanan Saya',
+    'about.timeline.student': 'Sarjana Komputer',
+    'about.timeline.student.desc': 'Lulus dari Universitas Ahmad Dahlan (IPK: 3.92)',
     'about.timeline.ml': 'Machine Learning Engineer',
     'about.timeline.ml.desc': 'Mengembangkan model AI untuk analitik prediktif',
     'about.timeline.crypto': 'Spesialis Kriptografi',
@@ -128,6 +132,8 @@ const translations = {
     'about.timeline.mobile.desc': 'Membangun aplikasi mobile lintas platform',
     'about.timeline.web': 'Web Developer',
     'about.timeline.web.desc': 'Menciptakan aplikasi web yang responsif',
+    'about.timeline.pmb': 'Student Employee',
+    'about.timeline.pmb.desc': 'Melakukan verifikasi dan registrasi kepada calon mahasiswa baru dan melakukan promosi kampus',
     
     // Skills Section
     'skills.title': 'Keahlian & Expertise',

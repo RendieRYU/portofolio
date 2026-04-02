@@ -70,9 +70,9 @@ const Skills = () => {
 
   const certifications = [
     {
-      title: 'Computer Science Student',
+      title: 'Computer Science Graduate',
       issuer: 'Universitas Ahmad Dahlan',
-      year: '2022 - Present',
+      year: 'March 2026',
       icon: '🎓'
     },
     {
@@ -82,9 +82,9 @@ const Skills = () => {
       icon: '👨‍🏫'
     },
     {
-      title: 'GPA 3.90/4.00',
+      title: 'GPA 3.92/4.00',
       issuer: 'Academic Achievement',
-      year: '2024',
+      year: '2026',
       icon: '🏆'
     }
   ];
@@ -165,8 +165,8 @@ const Skills = () => {
             Continuous Learning
           </h3>
           <p className="text-lg lg:text-xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-            "Technology evolves rapidly, and so do I. I'm committed to staying current with the latest trends, 
-            best practices, and emerging technologies to deliver the best solutions for every project."
+            &quot;Technology evolves rapidly, and so do I. I&apos;m committed to staying current with the latest trends, 
+            best practices, and emerging technologies to deliver the best solutions for every project.&quot;
           </p>
         </div>
       </div>

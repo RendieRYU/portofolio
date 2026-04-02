@@ -13,8 +13,8 @@ const Hero = () => {
   console.log('Hero render - name:', t('hero.name'), 'greeting:', t('hero.greeting'));
   
   const roles = {
-    en: ['Computer Science Student', 'Teaching Assistant', 'Web Developer', 'AI Enthusiast'],
-    id: ['Mahasiswa Informatika', 'Asisten Praktikum', 'Web Developer', 'AI Enthusiast']
+    en: ['Computer Science Graduate', 'Teaching Assistant', 'Web Developer', 'AI Enthusiast'],
+    id: ['Lulusan Informatika', 'Asisten Praktikum', 'Web Developer', 'AI Enthusiast']
   };
   
   const [currentRole, setCurrentRole] = useState(0);
@@ -57,7 +57,7 @@ const Hero = () => {
             </h1>
             
             <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 h-8 sm:h-10 lg:h-12">
-              I'm a{' '}
+              I&apos;m a{' '}
               <span className="text-blue-600 dark:text-blue-400 font-semibold">
                 {text}
                 <span className="animate-pulse">|</span>

@@ -4,25 +4,31 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
   const { t } = useLanguage();
-  
+
   const experiences = [
     {
-      year: '2022 - Present',
+      year: '2026 - present',
+      title: t('about.timeline.pmb'),
+      company: 'PMB UAD',
+      description: t('about.timeline.pmb.desc')
+    },
+    {
+      year: '2022 - 2026',
       title: t('about.timeline.student'),
       company: 'Universitas Ahmad Dahlan',
       description: t('about.timeline.student.desc')
-    },
-    {
-      year: '2023 - Present', 
-      title: t('about.timeline.assistant'),
-      company: 'Computer Science Department',
-      description: t('about.timeline.assistant.desc')
     },
     {
       year: '2023 - Present',
       title: t('about.timeline.developer'),
       company: 'Freelance & Projects',
       description: t('about.timeline.developer.desc')
+    },
+    {
+      year: '2023 - 2025',
+      title: t('about.timeline.assistant'),
+      company: 'Computer Science Department',
+      description: t('about.timeline.assistant.desc')
     }
   ];
 
@@ -30,7 +36,7 @@ const About = () => {
     { number: '4+', label: t('about.projects') },
     { number: '2+', label: t('about.experience') },
     { number: '5+', label: t('about.clients') },
-    { number: '3.90', label: t('about.awards') }
+    { number: '3.92', label: t('about.awards') }
   ];
 
   return (
@@ -83,13 +89,13 @@ const About = () => {
               <div key={index} className="anime-card relative flex flex-col md:flex-row items-start md:items-center gap-6 lg:gap-8 p-6 lg:p-8 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-300">
                 {/* Timeline dot - only show on desktop */}
                 <div className="absolute -left-4 top-10 w-8 h-8 anime-glow-bg rounded-full border-4 border-white dark:border-gray-900 hidden md:block"></div>
-                
+
                 <div className="md:w-52 lg:w-56 flex-shrink-0">
                   <span className="anime-gradient-text font-semibold text-lg lg:text-xl">
                     {exp.year}
                   </span>
                 </div>
-                
+
                 <div className="flex-grow space-y-3 lg:space-y-4">
                   <h4 className="text-xl lg:text-2xl font-bold text-gray-800 dark:text-white">
                     {exp.title}

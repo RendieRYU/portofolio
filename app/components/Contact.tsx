@@ -166,12 +166,12 @@ const Contact = () => {
           <div className="space-y-10 lg:space-y-12">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-6 lg:mb-8">
-                Let's connect
+                Let&apos;s connect
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8 lg:mb-10 leading-relaxed text-lg">
-                I'm always interested in hearing about new opportunities, 
-                whether it's a full-time position, freelance project, or just a chat about technology. 
-                Don't hesitate to reach out!
+                I&apos;m always interested in hearing about new opportunities, 
+                whether it&apos;s a full-time position, freelance project, or just a chat about technology. 
+                Don&apos;t hesitate to reach out!
               </p>
             </div>
 
@@ -204,8 +204,8 @@ const Contact = () => {
                 <span className="font-semibold text-lg lg:text-xl">Available for new opportunities</span>
               </div>
               <p className="text-green-100 text-base lg:text-lg leading-relaxed">
-                I'm currently open to internship opportunities, freelance projects, and collaboration. 
-                Let's discuss how we can work together!
+                I&apos;m currently open to internship opportunities, freelance projects, and collaboration. 
+                Let&apos;s discuss how we can work together!
               </p>
             </div>
 

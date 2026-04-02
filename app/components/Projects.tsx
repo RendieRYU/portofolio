@@ -170,8 +170,8 @@ const Projects = () => {
               Interested in working together?
             </h3>
             <p className="text-lg lg:text-xl opacity-90 mb-8 lg:mb-10 max-w-3xl mx-auto leading-relaxed">
-              I'm always open to discussing new opportunities and exciting projects. 
-              Let's create something amazing together!
+              I&apos;m always open to discussing new opportunities and exciting projects. 
+              Let&apos;s create something amazing together!
             </p>
             <a
               href="#contact"
